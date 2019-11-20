@@ -1,7 +1,7 @@
 <?php 
   include 'antimat.php';
 
-  $am=new antimat();
+  $am=new Antimat();
 ?>
 
 
@@ -18,8 +18,13 @@
    
    <p>
        <?php
-            echo $am->marked('Привет, Валера, как живешь?');
-            echo $am->blocked('Привет, Валера, как живешь?');
+            echo $am->marked('Привет, Валера, как живешь? хулиган ты');
+       ?>
+       </p>
+   
+       <p>
+       <?php
+            echo $am->blocked('Привет, Валера, как живешь? хулиган ты');
        
        ?>
    </p>

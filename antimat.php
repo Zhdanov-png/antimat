@@ -7,7 +7,7 @@ class Antimat
      маркировка слова
    */
     
-  private $search='Вале';
+  private $search=['Вале','хули','фиг'];
   
   public function setContent($search)
   {
@@ -23,17 +23,23 @@ class Antimat
     
    public function marked($subject) 
    {
-       return str_replace($this->search, 
-                           $this->wordmark($this->search), 
-                           $subject);
+       $tmp=$subject;
+       foreach($this->search as $find)
+       $tmp=str_replace($find, 
+                           $this->wordmark($find), 
+                           $tmp);
+       return $tmp;
    }
     
 
    public function blocked( $subject)
    {
-       return str_replace($this->search, 
-                           'sencored', 
-                           $subject); 
+       $tmp=$subject;
+       foreach($this->search as $find)
+       $tmp=str_replace($find, 
+                           'sensored@', 
+                           $tmp);
+       return $tmp;
    }
      
 
